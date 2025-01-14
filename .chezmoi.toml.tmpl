@@ -1,11 +1,3 @@
-{{- if eq .chezmoi.os "windows" }}
-["~/appdata/local/nvim"]
-type = "git-repo"
-url = "git@github.com:sfx1909/nvim.git"
-refreshPeriod = "1h"
-{{ else }}
-[".config/nvim"]
-type = "git-repo"
-url = "git@github.com:sfx1909/nvim.git"
-refreshPeriod = "1h"
-{{ end }}
+[git]
+    autoCommit = true
+    autoPush = true
