@@ -6,13 +6,17 @@ packages:
       - ajeetdsouza.zoxide
       - TheBrowserCompany.Arc
       - Neovim.Neovim
-      - gerardog.gsudo
       - BurntSushi.ripgrep.MSVC
       - JesseDuffield.lazygit
       - Clement.bottom
       - Microsoft.VisualStudioCode
+      - OpenJS.NodeJS
     chocolatey:
       - llvm
       - make
       - curl
       - openssl
+    powershell:
+      - Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+    scoop:
+      - bun
