@@ -1,0 +1,18 @@
+packages:
+  windows:
+    winget:
+      - Chocolatey.Chocolatey
+      - Git.Git
+      - ajeetdsouza.zoxide
+      - TheBrowserCompany.Arc
+      - Neovim.Neovim
+      - gerardog.gsudo
+      - BurntSushi.ripgrep.MSVC
+      - JesseDuffield.lazygit
+      - Clement.bottom
+      - Microsoft.VisualStudioCode
+    chocolatey:
+      - llvm
+      - make
+      - curl
+      - openssl

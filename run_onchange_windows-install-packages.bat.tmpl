@@ -1,0 +1,16 @@
+{{ if eq .chezmoi.os "windows" -}}
+echo OFF
+{{ range .packages.windows.winget -}}
+echo Installing {{ . | quote }}
+winget install  --id={{ . }} -e --accept-package-agreements
+{{ end -}}
+
+
+powershell -Command "gsudo config NewWindow.Force true"
+{{ range .packages.windows.chocolatey -}}
+echo Installing {{ . | quote }}
+powershell -Command "{choco install {{.}} -y}"
+{{ end -}}
+powershell -Command "gsudo config NewWindow.Force false"
+exit 0
+{{ end -}}
