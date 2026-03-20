@@ -1,9 +1,14 @@
 palette = "grey"
-format = """$username$hostname$directory$fill[$all](grey)$time$line_break$character"""
+format = """$username$hostname$directory$fill[$all](grey)$time$line_break$shell$character"""
 
 [character]
 success_symbol = "[@](bold green)"
 error_symbol = "[@](bold red)"
+
+[shell]
+fish_indicator = "<><"
+nu_indicator = ">"
+disabled = false
 
 [fill]
 symbol = '─'
