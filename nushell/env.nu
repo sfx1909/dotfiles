@@ -7,12 +7,21 @@ $env.PATH = (
     $env.PATH
     | split row (char esep)
     | prepend [
-        $"($env.GOPATH)/bin"          # Go globals
-        $"($env.BUN_INSTALL)/bin"     # Bun globals
-        $"($env.HOME)/.pub-cache/bin" # Dart globals
-        $"($env.HOME)/.local/bin"     # Local bins
-        $"($env.HOME)/bin"            # User bins
+        $"($env.GOPATH)/bin"
+        $"($env.BUN_INSTALL)/bin"
+        $"($env.HOME)/.pub-cache/bin"
+        $"($env.HOME)/.local/bin"
+        $"($env.HOME)/bin"
     ]
-    | filter { |p| ($p | path exists) } # Only add if exists
-    | uniq                              # No duplicates
+    | where { |p| ($p | path exists) }
+    | uniq
 )
+
+# --- Starship ---
+$env.STARSHIP_SHELL = "nu"
+mkdir $"($env.HOME)/.cache/starship"
+starship init nu | save -f $"($env.HOME)/.cache/starship/init.nu"
+
+# --- Carapace ---
+$env.CARAPACE_BRIDGES = 'nushell'
+carapace _carapace nushell | save -f $"($env.HOME)/.cache/carapace.nu"

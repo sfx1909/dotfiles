@@ -1,18 +1,8 @@
 # --- Prompt ---
-if (which starship | is-not-empty) {
-    $env.STARSHIP_SHELL = "nu"
-    let starship_cache = $"($env.HOME)/.cache/starship"
-    if not ($starship_cache | path exists) { mkdir $starship_cache }
-    starship init nu | save -f $starship_cache/init.nu
-    use $starship_cache/init.nu
-}
+use ~/.cache/starship/init.nu
 
 # --- Completions ---
-if (which carapace | is-not-empty) {
-    $env.CARAPACE_BRIDGES = 'nushell'
-    carapace _carapace nushell | save -f /tmp/carapace.nu
-    use /tmp/carapace.nu
-}
+source ~/.cache/carapace.nu
 
 # --- Aliases ---
 alias neofetch = fastfetch
