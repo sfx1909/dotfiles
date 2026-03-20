@@ -21,12 +21,6 @@ function nix-refresh --description "Update and rebuild NixOS"
 
     cd $config_dir
 
-    if test $use_gum = true
-        gum style --border normal --padding "1 2" --border-foreground 212 "NixOS Refresh"
-    else
-        echo "==> NixOS Refresh"
-    end
-
     # Update
     if test $use_gum = true && test $verbose = false
         gum spin --spinner dot --title "Updating..." -- sudo nix flake update --flake .
