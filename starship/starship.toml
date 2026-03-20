@@ -1,177 +1,73 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
-# Icons: https://www.nerdfonts.com/cheat-sheet
-# ░▒▓   ▓▒░   
-
-# ////////////////////////////////////////////////
-# FORMAT
-# ////////////////////////////////////////////////
-
-# Left
-format = """
-[░▒▓](color_black2)\
-$os\
-$time\
-[](fg:color_black2 bg:color_green)\
-$hostname\
-$localip\
-[](fg:color_green bg:color_blue2)\
-$username\
-[](fg:color_blue2 bg:color_yellow)\
-$shell\
-$shlvl\
-$sudo\
-[](fg:color_yellow bg:color_red)\
-$git_branch\
-$git_status\
-$package\
-$docker_context\
-[](fg:color_red bg:color_white3)\
-$directory\
-[](fg:color_white3)\
-$line_break\
-$character\
-[ ](fg:color_fg)
-"""
-
-# Right
-right_format = """$cmd_duration"""
-
-# Empty line
-add_newline = true
-
-# ////////////////////////////////////////////////
-# COLORS
-# ////////////////////////////////////////////////
-
-palette = 'arch_os'
-
-# Nord: https://www.nordtheme.com
-[palettes.arch_os]
-color_fg = '#d8dee9'
-color_bg = '#2e3440'
-color_red = '#bf616a'
-color_green = '#a3be8c'
-color_purple = '#b48ead'
-color_yellow = '#ebcb8b'
-color_orange = '#d08770'
-color_white1 = '#eceff4'
-color_white2 = '#e5e9f0'
-color_white3 = '#d8dee9'
-color_black1 = '#2e3440'
-color_black2 = '#3b4252'
-color_black3 = '#434c5e'
-color_black4 = '#4c566a'
-color_blue1 = '#5e81ac'
-color_blue2 = '#81a1c1'
-color_blue3 = '#88c0d0'
-color_blue4 = '#8fbcbb'
-
-# ////////////////////////////////////////////////
-# LINE BREAK (disabled)
-# ////////////////////////////////////////////////
-
-[line_break]
-disabled = true # Disabled
+palette = "grey"
+format = """$username$hostname$directory$fill[$all](grey)$time$line_break$character"""
 
 [character]
-disabled = true # Disabled
-success_symbol = '[ :](bold fg:color_green)' 
-error_symbol = '[ :](bold fg:color_red)'
-vimcmd_symbol = '[  ](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[  ](bold fg:color_purple)'
-vimcmd_replace_symbol = '[  ](bold fg:color_purple)'
-vimcmd_visual_symbol = '[  ](bold fg:color_yellow)'
+success_symbol = "[@](bold green)"
+error_symbol = "[@](bold red)"
 
-# ////////////////////////////////////////////////
-# MODULES LEFT
-# ////////////////////////////////////////////////
+[fill]
+symbol = '─'
+style = '#222222'
 
-[os]
-disabled = false
-style = "fg:color_white3 bg:color_black2"
-format = "[ $symbol ]($style)"
-
-[os.symbols]
-Arch = ""
+[cmd_duration]
+min_time = 10000
 
 [time]
 disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "bg:color_black2"
-format = '[[   $time ](fg:color_white3 bg:color_black2)]($style)'
+time_format = "%F %T"
+style = "#444444"
+format = '[$time]($style)'
 
-[hostname]
-disabled = false
-ssh_only = true
-ssh_symbol =  " 󱘖 " # 󱘖    󰣀
-style = "fg:color_bg bg:color_green"
-format = '[$ssh_symbol]($style)[ 󰍹  $hostname ]($style)'
-
-[localip]
-disabled = false
-ssh_only = true
-style = "fg:color_bg bg:color_green"
-format = '[ 󰩟 $localipv4 ]($style)'
-
-[username]
-disabled = false
-show_always = false
-style_user = "fg:color_bg bg:color_blue2"
-style_root = "fg:color_red bg:color_blue2"
-format = '[  ]($style)[ $user ](fg:color_bg bg:color_blue2)'
- 
-[shell]
-disabled = false
-fish_indicator = ""
-bash_indicator = "   bash "
-unknown_indicator = "   shell "
-style = "fg:color_bg bg:color_yellow"
-format = "[$indicator]($style)"
-
-[shlvl]
-disabled = false
-threshold = 2
-symbol = ''
-style = "fg:color_bg bg:color_yellow"
-format = "[ $symbol $shlvl ]($style)"
-
-[sudo]
-disabled = false
-symbol = '󰌆 ' 
-style = "fg:color_red bg:color_yellow"
-format = '[ $symbol ]($style)'
-
-[git_branch]
-symbol = ""
-style = "bg:color_red"
-format = '[[ $symbol $branch ](fg:color_fg bg:color_red)]($style)'
-
-[git_status]
-style = "bg:color_red"
-format = '[[($all_status$ahead_behind )](fg:color_fg bg:color_red)]($style)'
+[python]
+symbol = "py "
 
 [package]
-format = '[  $version ](fg:color_fg bg:color_red)'
+symbol = "package "
+style = "#777777"
 
-[docker_context]
-symbol = ""
-style = "bg:color_red"
-format = '[[ $symbol( $context) ](fg:color_fg bg:color_red)]($style)'
+[git_branch]
+symbol = "git "
 
-[directory]
-truncation_length = 6
-truncation_symbol = "••/"
-home_symbol = " " 
-read_only = "  "
-read_only_style = "fg:color_red bg:color_white3"
-style = "fg:color_bg bg:color_white3"
-format = "[  ]($style)[$read_only]($read_only_style)[ $path ]($style)"
+[aws]
+symbol = "aws "
 
-# ////////////////////////////////////////////////
-# MODULES RIGHT
-# ////////////////////////////////////////////////
+[terraform]
+symbol = "tf "
+style = "bold #777777"
 
-[cmd_duration]
-style = "fg:color_fg"
-format = "[ ◄ $duration ]($style)"
+[palettes.grey]
+grey = "#777777"
+none = "#777777"
+white = "#777777"
+rosewater = "#777777"
+flamingo = "#777777"
+pink = "#777777"
+mauve = "#777777"
+maroon = "#777777"
+peach = "#777777"
+sky = "#777777"
+sapphire = "#777777"
+blue = "#777777"
+lavender = "#777777"
+text = "#777777"
+subtext1 = "#777777"
+subtext0 = "#777777"
+overlay2 = "#777777"
+overlay1 = "#777777"
+overlay0 = "#777777"
+surface2 = "#777777"
+surface1 = "#777777"
+surface0 = "#777777"
+base = "#777777"
+mantle = "#777777"
+crust = "#777777"
+background = "#777777"
+current_line = "#777777"
+foreground = "#777777"
+comment = "#777777"
+cyan = "#777777"
+green = "#777777"
+orange = "#777777"
+purple = "#777777"
+red = "#777777"
+yellow = "#777777"
