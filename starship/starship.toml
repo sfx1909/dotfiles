@@ -1,18 +1,18 @@
-palette = "grey"
+palette = "terrafox"
 format = """$username$hostname$directory$fill[$all](grey)$time$line_break$shell$character"""
 
 [character]
-success_symbol = "[@](bold green)"
-error_symbol = "[@](bold red)"
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
 
 [shell]
-fish_indicator = "<><"
+fish_indicator = " "
 nu_indicator = ">"
 disabled = false
 
 [fill]
 symbol = '─'
-style = '#222222'
+style = '#2e383c'
 
 [cmd_duration]
 min_time = 10000
@@ -20,59 +20,52 @@ min_time = 10000
 [time]
 disabled = false
 time_format = "%F %T"
-style = "#444444"
+style = "#859289"
 format = '[$time]($style)'
 
 [python]
 symbol = "py "
 
 [package]
-symbol = "package "
-style = "#777777"
+symbol = " "
+style = "#859289"
 
 [git_branch]
-symbol = "git "
+symbol = " "
 
-[aws]
-symbol = "aws "
-
-[terraform]
-symbol = "tf "
-style = "bold #777777"
-
-[palettes.grey]
-grey = "#777777"
-none = "#777777"
-white = "#777777"
-rosewater = "#777777"
-flamingo = "#777777"
-pink = "#777777"
-mauve = "#777777"
-maroon = "#777777"
-peach = "#777777"
-sky = "#777777"
-sapphire = "#777777"
-blue = "#777777"
-lavender = "#777777"
-text = "#777777"
-subtext1 = "#777777"
-subtext0 = "#777777"
-overlay2 = "#777777"
-overlay1 = "#777777"
-overlay0 = "#777777"
-surface2 = "#777777"
-surface1 = "#777777"
-surface0 = "#777777"
-base = "#777777"
-mantle = "#777777"
-crust = "#777777"
-background = "#777777"
-current_line = "#777777"
-foreground = "#777777"
-comment = "#777777"
-cyan = "#777777"
-green = "#777777"
-orange = "#777777"
-purple = "#777777"
-red = "#777777"
-yellow = "#777777"
+[palettes.terrafox]
+grey = "#859289"
+none = "#d3c6aa"
+white = "#d3c6aa"
+rosewater = "#e67e80"
+flamingo = "#e67e80"
+pink = "#d699b6"
+mauve = "#d699b6"
+maroon = "#e67e80"
+peach = "#e69875"
+sky = "#83c092"
+sapphire = "#7fbbb3"
+blue = "#7fbbb3"
+lavender = "#7fbbb3"
+text = "#d3c6aa"
+subtext1 = "#d3c6aa"
+subtext0 = "#c9b99a"
+overlay2 = "#859289"
+overlay1 = "#859289"
+overlay0 = "#859289"
+surface2 = "#374247"
+surface1 = "#2e383c"
+surface0 = "#2d353b"
+base = "#272e33"
+mantle = "#232a2e"
+crust = "#1e2326"
+background = "#272e33"
+current_line = "#2e383c"
+foreground = "#d3c6aa"
+comment = "#859289"
+cyan = "#83c092"
+green = "#a7c080"
+orange = "#e69875"
+purple = "#d699b6"
+red = "#e67e80"
+yellow = "#dbbc7f"

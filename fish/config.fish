@@ -31,7 +31,18 @@ if command -q carapace
 end
 
 if command -q starship
+    if set -q VSCODE_PID; or test "$TERM_PROGRAM" = vscode; or set -q ZED_TERM
+        set -gx STARSHIP_CONFIG ~/.config/starship/minimal.toml
+    end
+
+    function starship_transient_rprompt_func
+        starship module time
+    end
+    function starship_transient_prompt_func
+        starship module character
+    end
     starship init fish | source
+    enable_transience
 end
 
 # --- Misc ---

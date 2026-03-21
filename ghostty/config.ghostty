@@ -1,0 +1,15 @@
+mouse-scroll-multiplier = 0.5
+
+window-decoration = client
+
+theme = Terafox
+window-theme = ghostty
+font-feature = -liga
+background-opacity = 0.8
+background-blur = 20
+background-opacity-cells = true
+
+shell-integration = fish
+command = fish
+
+font-family = "Iosevka Nerd Font"
