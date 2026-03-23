@@ -1,71 +1,120 @@
-palette = "terrafox"
-format = """$username$hostname$directory$fill[$all](grey)$time$line_break$shell$character"""
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+palette = "terafox"
+
+format = """$directory$git_branch$git_status$character"""
+
+[palettes.nightfox]
+black = "#393b44"
+red = "#c94f6d"
+green = "#81b29a"
+yellow = "#dbc074"
+blue = "#719cd6"
+magenta = "#9d79d6"
+cyan = "#63cdcf"
+white = "#dfdfe0"
+orange = "#f4a261"
+pink = "#d67ad2"
+bg = "#191724"
+fg = "#cdcecf"
+
+[palettes.nordfox]
+black = "#3b4252"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#81a1c1"
+magenta = "#b48ead"
+cyan = "#88c0d0"
+white = "#e5e9f0"
+orange = "#d08770"
+pink = "#c68aee"
+bg = "#2e3440"
+fg = "#b9bfca"
+
+[palettes.carbonfox]
+black = "#282828"
+red = "#ee5396"
+green = "#25be6a"
+yellow = "#08bdba"
+blue = "#78a9ff"
+magenta = "#be95ff"
+cyan = "#33b1ff"
+white = "#f2f4f8"
+orange = "#3ddbd9"
+pink = "#ff7eb6"
+bg = "#161616"
+fg = "#f2f4f8"
+
+[palettes.terafox]
+black = "#2f3239"
+red = "#e85c51"
+green = "#7aa4a1"
+yellow = "#fda47f"
+blue = "#5a93aa"
+magenta = "#ad5c7c"
+cyan = "#a1cdd8"
+white = "#ebebeb"
+orange = "#ff8349"
+pink = "#cb748b"
+bg = "#152528"
+fg = "#e6eaea"
+
+[palettes.duskfox]
+black = "#393552"
+red = "#eb6f92"
+green = "#a3be8c"
+yellow = "#f6c177"
+blue = "#56949f"
+magenta = "#c4a7e7"
+cyan = "#9ccfd8"
+white = "#e0def4"
+orange = "#ea9a97"
+pink = "#eb98c3"
+bg = "#232136"
+fg = "#e0def4"
+
+[palettes.dayfox]
+black = "#e4e4e4"
+red = "#a5222f"
+green = "#396553"
+yellow = "#7d5c00"
+blue = "#2848a9"
+magenta = "#7e4cc0"
+cyan = "#027a7a"
+white = "#282726"
+orange = "#954717"
+pink = "#b33076"
+bg = "#f6f2ee"
+fg = "#3d2b5a"
+
+[palettes.dawnfox]
+black = "#f2e9e1"
+red = "#b4637a"
+green = "#618774"
+yellow = "#ea9d34"
+blue = "#286983"
+magenta = "#907aa9"
+cyan = "#56949f"
+white = "#575279"
+orange = "#d7827e"
+pink = "#b4637a"
+bg = "#faf4ed"
+fg = "#575279"
+
 
 [character]
-success_symbol = "[](bold green)"
-error_symbol = "[](bold red)"
+success_symbol = "[󰄾](bold green)"
+error_symbol = "[󰄾](bold red)"
+format = "$symbol "
 
-[shell]
-fish_indicator = " "
-nu_indicator = ">"
-disabled = false
-
-[fill]
-symbol = '─'
-style = '#2e383c'
-
-[cmd_duration]
-min_time = 10000
-
-[time]
-disabled = false
-time_format = "%F %T"
-style = "#859289"
-format = '[$time]($style)'
-
-[python]
-symbol = "py "
-
-[package]
-symbol = " "
-style = "#859289"
+[directory]
+style = "bold blue"
+truncation_length = 3
+truncation_symbol = "… /"
 
 [git_branch]
-symbol = " "
-
-[palettes.terrafox]
-grey = "#859289"
-none = "#d3c6aa"
-white = "#d3c6aa"
-rosewater = "#e67e80"
-flamingo = "#e67e80"
-pink = "#d699b6"
-mauve = "#d699b6"
-maroon = "#e67e80"
-peach = "#e69875"
-sky = "#83c092"
-sapphire = "#7fbbb3"
-blue = "#7fbbb3"
-lavender = "#7fbbb3"
-text = "#d3c6aa"
-subtext1 = "#d3c6aa"
-subtext0 = "#c9b99a"
-overlay2 = "#859289"
-overlay1 = "#859289"
-overlay0 = "#859289"
-surface2 = "#374247"
-surface1 = "#2e383c"
-surface0 = "#2d353b"
-base = "#272e33"
-mantle = "#232a2e"
-crust = "#1e2326"
-background = "#272e33"
-current_line = "#2e383c"
-foreground = "#d3c6aa"
-comment = "#859289"
-cyan = "#83c092"
-green = "#a7c080"
-orange = "#e69875"
-purple = "#d699b6"
-red = "#e67e80"
-yellow = "#dbbc7f"
+symbol = " "
+style = "bold magenta"

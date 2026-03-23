@@ -8,6 +8,7 @@ set -gx BUN_INSTALL $HOME/.bun
 fish_add_path $GOPATH/bin # Go Global
 fish_add_path $BUN_INSTALL/bin # Bun Global
 fish_add_path $HOME/.pub-cache/bin # Dart Global
+fish_add_path $HOME/.tools/flutter/bin # Flutter and Dart
 
 ## --- Local Bin Auto Discovery ---
 for dir in $HOME/.local/bin $HOME/bin
