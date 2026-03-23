@@ -47,3 +47,8 @@ end
 
 # --- Misc ---
 set -U fish_greeting
+
+# --- SSH Agent ---
+if test -z "$SSH_AUTH_SOCK"
+    set -gx SSH_AUTH_SOCK /run/user/1000/ssh-agent
+end

@@ -4,6 +4,10 @@ window-decoration = client
 
 theme = Terafox
 window-theme = ghostty
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+window-padding-color = extend-always
 font-feature = -liga
 background-opacity = 0.8
 background-blur = 20
@@ -13,3 +17,13 @@ shell-integration = fish
 command = fish
 
 font-family = "Iosevka Nerd Font"
+
+link-previews = true
+resize-overlay = never
+copy-on-select = true
+
+shell-integration-features = true
+faint-opacity = 0.4
+
+async-backend = auto
+auto-update = off
